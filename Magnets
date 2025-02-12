@@ -1,0 +1,11 @@
+n = int(input())
+groups = 1  # At least one group exists
+prev_magnet = input().strip()  # Read the first magnet
+
+for _ in range(1, n):
+    current_magnet = input().strip()
+    if current_magnet != prev_magnet:
+        groups += 1
+    prev_magnet = current_magnet
+
+print(groups)
