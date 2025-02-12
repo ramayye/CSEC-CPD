@@ -1,0 +1,14 @@
+def count_guest_uniform_games(n, teams):
+    count = 0
+    for i in range(n):  # Host team
+        for j in range(n):  # Guest team
+            if i != j and teams[i][0] == teams[j][1]:  # hi == aj
+                count += 1
+    return count
+
+# Input reading
+n = int(input())
+teams = [tuple(map(int, input().split())) for _ in range(n)]
+
+# Output result
+print(count_guest_uniform_games(n, teams))
